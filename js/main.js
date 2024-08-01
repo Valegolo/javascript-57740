@@ -10,15 +10,27 @@ function getCost(itemName) {
 
 // Función para calcular el costo total mensual
 function calculateTotal() {
-    let items = ["Alquiler", "Servicios (agua, luz, etc.)", "Comestibles", "Otros Gastos"];
+    let budget = getCost("Presupuesto");
+    let items = ["Alquiler", "Agua", "Luz", "Mercado", "Otros Gastos"];
     let total = 0;
     
     for (let i = 0; i < items.length; i++) {
         total += getCost(items[i]);
     }
-    
-    alert(`Costo Total Mensual: $${total.toFixed(2)}`);
+
+    total = Math.round(total);  // Redondear el total a un número entero
+    budget = Math.round(budget);  // Redondear el presupuesto a un número entero
+
+    if (total > budget) {
+        let difference = total - budget;
+        alert(`El presupuesto no es suficiente. La diferencia es: $${difference}`);
+    } else {
+        let savings = budget - total;
+        alert(`Costo Total Mensual: $${total}\nCapacidad de Ahorro: $${savings}`);
+    }
 }
 
-// Ejecutar la función para calcular el total
-calculateTotal();
+// Ejecutar la función para calcular el total después de 5 segundos
+setTimeout(calculateTotal, 500);
+
+
