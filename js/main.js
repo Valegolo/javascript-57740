@@ -30,7 +30,7 @@ function calculateTotal() {
     }
 }
 
-// Ejecutar la función para calcular el total después de 5 segundos
+//calcular el total después de algunos segundos
 setTimeout(calculateTotal, 500);
 
 
