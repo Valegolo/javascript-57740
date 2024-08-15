@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simulador de Gastos</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/css/test.css">
 </head>
 <body>
-    <div id="userInfo">
+    <div id="userInfo" class="container">
         <h1>Bienvenido al Simulador de Gastos</h1>
         <p>Por favor, ingrese su nombre y edad para comenzar:</p>
         <form id="userForm">
@@ -17,21 +17,30 @@
             <input type="number" id="age" required>
             <button type="button" id="startSimulation">Comenzar</button>
         </form>
+        <div id="message" class="hidden"></div> <!-- Mensajes de error o éxito -->
     </div>
 
-    <div id="gastosForm" class="hidden">
+    <div id="gastosForm" class="container hidden">
         <h2>Ingrese sus gastos mensuales:</h2>
         <label for="budget">Presupuesto Mensual:</label>
         <input type="number" id="budget" placeholder="Ingresa tu presupuesto">
-        <div id="gastosInputs"></div>
-        <button type="button" id="calculateTotal">Calcular Total</button>
-        <div id="resultado" class="hidden">
-            <p id="totalGastos"></p>
-            <p id="diferencia"></p>
-        </div>
-        <div id="opciones" class="hidden">
-            <button type="button" id="buscarGasto">Buscar Gasto</button>
-            <button type="button" id="filtrarGastos">Filtrar Gastos</button>
-        </div>
-    
 
+        <div id="gastosInputs"></div> <!-- Contenedor para los inputs de gastos -->
+
+        <button type="button" id="calculateTotal">Calcular Total</button>
+        <button type="button" id="buscarGasto">Buscar Gasto</button>
+        <button type="button" id="filtrarGastos">Filtrar Gastos</button>
+
+        <div id="resultado" class="hidden">
+            <div id="totalGastos"></div>
+            <div id="diferencia"></div>
+        </div>
+
+        <div id="opciones" class="hidden">
+            <button type="button" id="nuevoCalculo">Nuevo Cálculo</button>
+        </div>
+    </div>
+
+    <script src="/js/test.js"></script>
+</body>
+</html>
