@@ -28,16 +28,24 @@
         <div id="gastosInputs"></div> <!-- Contenedor para los inputs de gastos -->
 
         <button type="button" id="calculateTotal">Calcular Total</button>
-        <button type="button" id="buscarGasto">Buscar Gasto</button>
-        <button type="button" id="filtrarGastos">Filtrar Gastos</button>
+        <p>A continuación podrá filtrar la información que necesite, ya sea por nombre del gasto, o por un valor MAYOR al que ingrese</p>
+        <!-- Nuevo formulario para buscar gasto por nombre -->
+        <div id="searchForm">
+            <label for="searchValue">Buscar gasto por nombre:</label>
+            <input type="text" id="searchValue" placeholder="Ingresa el nombre del gasto">
+            <button type="button" id="buscarGasto">Buscar Gasto</button>
+        </div>
+
+        <!-- Nuevo formulario de filtrado -->
+        <div id="filterForm">
+            <label for="filterValue">Filtrar gastos mayores a:</label>
+            <input type="number" id="filterValue" placeholder="Ingresa el valor mínimo">
+            <button type="button" id="filtrarGastos">Aplicar Filtro</button>
+        </div>
 
         <div id="resultado" class="hidden">
             <div id="totalGastos"></div>
             <div id="diferencia"></div>
-        </div>
-
-        <div id="opciones" class="hidden">
-            <button type="button" id="nuevoCalculo">Nuevo Cálculo</button>
         </div>
     </div>
 

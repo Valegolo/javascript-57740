@@ -66,13 +66,12 @@ function calculateTotal() {
     }
 
     resultadoElement.classList.remove("hidden");
-    document.getElementById("opciones").classList.remove("hidden");
 }
 
-// Función para buscar un gasto específico por nombre
+// Función para buscar un gasto específico por nombre desde el DOM
 function buscarGastoPorNombre() {
-    let nombreGasto = prompt("Ingrese el nombre del gasto que desea buscar:");
-    let gastoEncontrado = gastos.find(gasto => gasto.nombre.toLowerCase() === nombreGasto.toLowerCase());
+    let nombreGasto = document.getElementById("searchValue").value.trim().toLowerCase();
+    let gastoEncontrado = gastos.find(gasto => gasto.nombre.toLowerCase() === nombreGasto);
 
     let resultadoElement = document.getElementById("resultado");
     let totalGastosElement = document.getElementById("totalGastos");
@@ -80,15 +79,15 @@ function buscarGastoPorNombre() {
     if (gastoEncontrado) {
         totalGastosElement.textContent = `El gasto de ${gastoEncontrado.nombre} tiene un costo de $${gastoEncontrado.costo}.`;
     } else {
-        totalGastosElement.textContent = `No se encontró un gasto con el nombre ${nombreGasto}.`;
+        totalGastosElement.textContent = `No se encontró un gasto con el nombre "${nombreGasto}".`;
     }
 
     resultadoElement.classList.remove("hidden");
 }
 
-// Función para filtrar gastos con un costo mayor a un valor dado
+// Función para filtrar gastos con un costo mayor a un valor dado desde el DOM
 function filtrarGastosMayoresA() {
-    let valorMinimo = parseFloat(prompt("Ingrese el valor mínimo para filtrar los gastos:"));
+    let valorMinimo = parseFloat(document.getElementById("filterValue").value);
     let gastosFiltrados = gastos.filter(gasto => gasto.costo > valorMinimo);
 
     let resultadoElement = document.getElementById("resultado");
@@ -161,7 +160,7 @@ function loadGastosInputs() {
 }
 
 // Evento al cargar la página
-document.addEventListener("DOMContentLoaded", function () {
-    initSimulator();
+document.addEventListener("DOMContentLoaded", function() {
     loadGastosInputs();
+    initSimulator();
 });
