@@ -1,0 +1,7 @@
+[
+    { "nombre": "Alquiler", "costo": 0 },
+    { "nombre": "Agua", "costo": 0 },
+    { "nombre": "Luz", "costo": 0 },
+    { "nombre": "Mercado", "costo": 0 },
+    { "nombre": "Otros Gastos", "costo": 0 }
+]
